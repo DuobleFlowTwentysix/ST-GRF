@@ -25,8 +25,8 @@ My path under windows operating system is:
 ```python
 filepath:
   GPU-Server:
-    knowair_fp: D:\code\my_code\ST-GRF\data\fanghao\rainfall\stgrf\chainair2010_2019_a.npy
-    results_dir: D:\code\my_code\ST-GRF\data\fanghao\rainfall\stgrf\results
+    knowair_fp: D:\code\my_code\ST-GRF-main\data\fanghao\rainfall\stgrf\chainair2010_2019_a.npy
+    results_dir: D:\code\my_code\ST-GRF-main\data\fanghao\rainfall\stgrf\results
 
 ```
 
