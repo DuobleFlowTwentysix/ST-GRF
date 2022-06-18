@@ -1,0 +1,75 @@
+---
+experiments:
+  metero_use: ['Temperature',
+               'Relative_humidity',
+               'Sunshine_duration',
+               'Surface_pressure',
+               'Ground_temperature',
+               'Wind_direction',
+               'Wind_speed']
+  save_npy: True
+  dataset_num: 2
+#  model: MLP
+#  model: LSTM
+#  model: GRU
+#  model: GC_LSTM
+#  model: nodesFC_GRU
+  model: STGRF_GRU
+#  model: STGRF_GRU_nosub
+#  model: STGRF_LSTM
+#  model: STGRF_BILSTM
+#  model: STGRF_BIGRU
+#  model: STGRF_BILSTM_nosub
+
+train:
+  batch_size: 16
+  epochs: 50
+  exp_repeat: 10
+  hist_len: 1
+  pred_len: 1
+  weight_decay: 0.0005
+  early_stop: 10
+  lr: 0.0005
+
+filepath:
+  GPU-Server:
+    rainfall_fp: D:\code\my_code\ST-GRF\data\fanghao\rainfall\stgrf\chainair2010_2019_a.npy
+    results_dir: D:\code\my_code\ST-GRF\data\fanghao\rainfall\stgrf\results
+
+data:
+  metero_var:
+    ['Temperature',
+     'Relative_humidity',
+     'Sunshine_duration',
+     'Surface_pressure',
+     'Ground_temperature',
+     'Wind_direction',
+     'Wind_speed']
+
+dataset:
+  data_start: [[2010, 1, 1, 0, 0], GMT]
+  data_end: [[2019, 12, 31, 0, 0], GMT]
+
+  1:
+    train_start: [[2010, 1, 1], GMT]
+    train_end: [[2015, 12, 31], GMT]
+    val_start: [[2016, 1, 1], GMT]
+    val_end: [[2017, 12, 31], GMT]
+    test_start: [[2018, 1, 1], GMT]
+    test_end: [[2019, 12, 31], GMT]
+
+  2:
+    train_start: [[2015, 1, 1], GMT]
+    train_end: [[2016, 12, 31], GMT]
+    val_start: [[2017, 1, 1], GMT]
+    val_end: [[2017, 12, 31], GMT]
+    test_start: [[2018, 1, 1], GMT]
+    test_end: [[2018, 12, 31], GMT]
+
+  3:
+    train_start: [[2017, 1, 1], GMT]
+    train_end: [[2017, 12, 31], GMT]
+    val_start: [[2018, 1, 1], GMT]
+    val_end: [[2018, 12, 31], GMT]
+    test_start: [[2019, 1, 1], GMT]
+    test_end: [[2019, 12, 31], GMT]
